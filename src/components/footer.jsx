@@ -31,7 +31,7 @@ export default function Footer() {
           {/* Background Image */}
           <div className="relative h-[500px] sm:h-[500px] lg:h-[400px]">
             <img
-              src="/images/footer 2.jpg"
+              src="/images/Tour-Agency 1.jpg"
               alt="Tropical island paradise footer background"
               className="w-full h-full object-cover"
             />
@@ -63,9 +63,9 @@ export default function Footer() {
               {/* CENTER TEXT */}
               <div className="flex-1 flex flex-col items-center justify-center text-center px-4">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8 leading-tight drop-shadow-lg">
-                  Get started on planning
+                  Begin your journey
                   <br />
-                  the best trip ever.
+                  your best trip starts here.
                 </h2>
                 <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-white drop-shadow-md tracking-wider">
                   SRI LANKA
@@ -78,7 +78,7 @@ export default function Footer() {
                 {/* Logo + Copyright */}
                 <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6">
                   <img
-                    src="/images/logo.png"
+                    src="/images/Tour-Concept.png"
                     alt="Ceyluxe Logo"
                     className="h-20 w-auto object-contain drop-shadow-lg"
                   />

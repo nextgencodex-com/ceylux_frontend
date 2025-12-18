@@ -18,6 +18,38 @@ export default function AboutUsPage() {
         {`
           @import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
           .agbalumo-font { font-family: 'Agbalumo', sans-serif; }
+
+          /* Gradient Colors for AI Travel Assistant Title */
+          .gradient-blue {
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          .gradient-green {
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          .gradient-yellow {
+            background: linear-gradient(90deg, #eab308, #ca8a04);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          
+          /* Gradient mix for longer text */
+          .gradient-mix {
+            background: linear-gradient(90deg, 
+              #3b82f6 0%, 
+              #22c55e 50%, 
+              #eab308 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
         `}
       </style>
 
@@ -57,7 +89,7 @@ export default function AboutUsPage() {
         <div className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              <span className="text-cyan-400">Our</span> <span className="text-gray-800">Story</span>
+              <span className="gradient-mix">Our Story</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Discover the journey that brought Ceyluxe to life and our passion for showcasing Sri Lanka's beauty
@@ -96,7 +128,7 @@ export default function AboutUsPage() {
         <div className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              <span className="text-cyan-400">Our</span> <span className="text-gray-800">Mission</span>
+              <span className="gradient-mix">Our Mission</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               We're committed to providing exceptional travel experiences while preserving Sri Lanka's natural and cultural heritage
@@ -149,7 +181,7 @@ export default function AboutUsPage() {
         <div className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              <span className="text-cyan-400">Our</span> <span className="text-gray-800">Team</span>
+              <span className="gradient-mix">Our Team</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Meet the passionate individuals who make your Sri Lankan adventure possible
@@ -203,7 +235,7 @@ export default function AboutUsPage() {
         <div className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              <span className="text-cyan-400">Why Choose</span> <span className="text-gray-800">Ceyluxe?</span>
+              <span className="gradient-mix">Why Choose Ceyluxe?</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Experience the difference that makes us the preferred choice for Sri Lankan adventures
