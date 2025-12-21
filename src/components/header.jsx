@@ -29,7 +29,7 @@ export default function Header() {
           {/* Logo - Desktop (left side) */}
           <div className="hidden md:block">
             <img 
-              src="/images/logo1.png" 
+              src="/images/Tour-Concept.jpeg" 
               alt="Ceyluxe Logo" 
               className="h-32 w-auto object-contain"
             />
@@ -44,7 +44,7 @@ export default function Header() {
                   onClick={() => handleNavClick(item)}
                   className={`px-3 lg:px-5 py-2.5 text-sm font-medium transition-all duration-200 rounded-full whitespace-nowrap ${
                     location.pathname === item.path
-                      ? "bg-cyan-400 text-white shadow-sm"
+                      ? "bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 text-black shadow-sm"
                       : "text-black hover:text-slate-700 hover:bg-slate-50"
                   }`}
                 >

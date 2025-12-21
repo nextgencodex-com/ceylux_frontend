@@ -87,37 +87,81 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      {/* Add Google Font in a style tag */}
+      {/* Add Google Font and Custom Gradient Styles */}
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
           .agbalumo-font {
             font-family: 'Agbalumo', sans-serif;
           }
+          
+          /* Gradient Colors for AI Travel Assistant Title */
+          .gradient-blue {
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          .gradient-green {
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          .gradient-yellow {
+            background: linear-gradient(90deg, #eab308, #ca8a04);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          
+          /* Gradient mix for longer text */
+          .gradient-mix {
+            background: linear-gradient(90deg, 
+              #3b82f6 0%, 
+              #22c55e 50%, 
+              #eab308 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
         `}
       </style>
 
-      {/* Hero Section with Agbalumo font */}
+      {/* Hero Section with Video Background */}
       <div className="relative mt-4 sm:mt-6 lg:mt-8 mx-2 sm:mx-4 lg:mx-8">
         <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl sm:rounded-3xl overflow-hidden">
-          <img
-            src="/images/hero.jpg"
-            alt="Beautiful tropical island with crystal clear water"
+          {/* Video Background with Image Fallback */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover"
-          />
+            poster="/images/hero.jpg"
+          >
+            <source src="/videos/hero 3-video.mp4" type="video/mp4" />
+            {/* Fallback to original image if video doesn't load */}
+            <img 
+              src="/images/hero.jpg" 
+              alt="Beautiful tropical island with crystal clear water" 
+              className="w-full h-full object-cover"
+            />
+          </video>
 
           {/* Hero Content Overlay with font changes */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-2 sm:px-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-2 sm:mb-4 drop-shadow-lg agbalumo-font">
               Welcome To
               <br />
-              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl">Magic Island</span>
+              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl">Crafting Local & Global Journeys</span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl mb-1 sm:mb-2 drop-shadow-md font-medium agbalumo-font">
               Adventure Starts Here
             </p>
             <p className="text-base sm:text-lg md:text-xl mb-4 sm:mb-6 lg:mb-8 drop-shadow-md agbalumo-font">
-              Sri Lanka
+              Authentic Sri Lankan Experiences
             </p>
             <button 
               className="bg-white/20 backdrop-blur-sm border-2 border-white text-white px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-white/30 transition-all duration-300 mb-4 sm:mb-6 lg:mb-8 text-sm sm:text-base"
@@ -159,12 +203,11 @@ export default function Home() {
         </div>
       </div>
 
-      {/* AI Travel Assistant Section */}
+      {/* AI Travel Assistant Section with Gradient Title */}
       <div id="ai-assistant" className="max-w-4xl mx-auto px-4 sm:px-4 py-8 sm:py-12 lg:py-16">
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4">
-            <span className="text-cyan-400">AI</span> <span className="text-gray-800">Travel</span>{" "}
-            <span className="text-cyan-400">Assistant</span>
+            <span className="gradient-mix">AI Travel Assistant</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2">
             Effortlessly Plan Your Trip With Smart AI Assistance
@@ -197,7 +240,7 @@ export default function Home() {
                 <Mic className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
               <button 
-                className="bg-black text-white p-3 sm:p-4 rounded-full hover:bg-gray-800 transition-colors"
+                className="bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 text-black p-3 sm:p-4 rounded-full hover:from-[#3b82f6]/30 hover:via-[#22c55e]/30 hover:to-[#eab308]/30 transition-colors"
                 onClick={handleSendMessage}
               >
                 <Send className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -279,31 +322,30 @@ export default function Home() {
           )}
         </div>
 
-        {/* Botpress Chat Toggle Button */}
+        {/* Botpress Chat Toggle Button with RGB Gradient */}
         <div className="flex justify-center my-6">
           <button
             onClick={() => window.botpressWebChat?.toggle()}
-            className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-lg shadow-lg hover:from-cyan-600 hover:to-blue-600 transition"
+            className="bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 text-black px-6 py-3 rounded-lg shadow-lg hover:from-[#3b82f6]/30 hover:via-[#22c55e]/30 hover:to-[#eab308]/30 transition"
           >
             Chat with our AI Assistant
           </button>
         </div>
       </div>
 
-      {/* Best Selling Tour Packages Section */}
+      {/* Best Selling Tour Packages Section with Gradient Title */}
       <div className="max-w-6xl mx-auto px-4 py-8 sm:py-12 lg:py-16">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Side - Title and Description */}
           <div className="lg:w-1/3">
             <div className="sticky top-24">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
-                <span className="text-gray-800">Best Selling</span>{" "}
-                <span className="text-cyan-400">Tour Packages</span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                <span className="gradient-mix">Best Selling Tour Packages</span>
               </h2>
               <p className="text-gray-600 mb-6">
                 Discover our most popular tour packages curated by thousands of happy travelers
               </p>
-              <button className="bg-cyan-400 hover:bg-cyan-500 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-300 shadow-lg">
+              <button className="bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 text-gray-800 font-semibold px-6 py-3 rounded-lg shadow-lg hover:from-[#3b82f6]/30 hover:via-[#22c55e]/30 hover:to-[#eab308]/30 transition-colors duration-300">
                 View All Packages
               </button>
               <div className="mt-8 hidden lg:block">
@@ -421,9 +463,8 @@ export default function Home() {
       {/* Interactive Sri Lanka Map Section */}
       <div className="max-w-6xl mx-auto px-4 py-8 sm:py-12 lg:py-16">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">
-            <span className="text-cyan-400">Explore</span>{" "}
-            <span className="text-gray-800">Sri Lanka</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+            <span className="gradient-mix">Explore Sri Lanka</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2 mt-4">
             Click on the map to discover popular destinations and attractions
@@ -438,15 +479,14 @@ export default function Home() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-16 mb-16 sm:mb-20 lg:mb-24">
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">
-            <span className="text-cyan-400">TOUR PACKAGES &</span>{" "}
-            <span className="text-gray-800">TOP PLACES TO VISIT</span>
+            <span className="gradient-mix">TOUR PACKAGES & TOP PLACES TO VISIT</span>
           </h2>
         </div>
 
         {/* Tour Packages List */}
         <div className="space-y-8 sm:space-y-12">
           {/* Beach Getaway Package */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-gradient-to-r from-[#3b82f6]/15 via-[#22c55e]/15 to-[#eab308]/15 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="flex gap-3 flex-shrink-0">
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden shadow-md">
                 <img src="/images/beach-1.jpg" alt="Beach view" className="w-full h-full object-cover" />
@@ -474,7 +514,7 @@ export default function Home() {
           </div>
 
           {/* Cultural Heritage Tour */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-gradient-to-r from-[#3b82f6]/15 via-[#22c55e]/15 to-[#eab308]/15 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="flex gap-3 flex-shrink-0">
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden shadow-md">
                 <img src="/images/cultural-1.jpg" alt="Ancient temple" className="w-full h-full object-cover" />
@@ -502,7 +542,7 @@ export default function Home() {
           </div>
 
           {/* Spiritual & Wellness Retreat */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-gradient-to-r from-[#3b82f6]/15 via-[#22c55e]/15 to-[#eab308]/15 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="flex gap-3 flex-shrink-0">
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden shadow-md">
                 <img src="/images/wellness-1.jpg" alt="Meditation center" className="w-full h-full object-cover" />
@@ -530,7 +570,7 @@ export default function Home() {
           </div>
 
           {/* Romantic Honeymoon Getaway */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-gradient-to-r from-[#3b82f6]/15 via-[#22c55e]/15 to-[#eab308]/15 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="flex gap-3 flex-shrink-0">
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden shadow-md">
                 <img src="/images/honeymoon-1.jpg" alt="Luxury resort" className="w-full h-full object-cover" />
@@ -558,7 +598,7 @@ export default function Home() {
           </div>
 
           {/* Food & Culture Experience */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-gradient-to-r from-[#3b82f6]/15 via-[#22c55e]/15 to-[#eab308]/15 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="flex gap-3 flex-shrink-0">
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden shadow-md">
                 <img src="/images/food-1.jpg" alt="Local cuisine" className="w-full h-full object-cover" />
@@ -586,7 +626,7 @@ export default function Home() {
           </div>
 
           {/* Wildlife & Nature Safari */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-gradient-to-r from-[#3b82f6]/15 via-[#22c55e]/15 to-[#eab308]/15 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="flex gap-3 flex-shrink-0">
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden shadow-md">
                 <img src="/images/wildlife-1.jpg" alt="Safari animals" className="w-full h-full object-cover" />
