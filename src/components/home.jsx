@@ -206,7 +206,7 @@ export default function Home() {
       {/* AI Travel Assistant Section with Gradient Title */}
       <div id="ai-assistant" className="max-w-4xl mx-auto px-4 sm:px-4 py-8 sm:py-12 lg:py-16">
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 agbalumo-font">
             <span className="gradient-mix">AI Travel Assistant</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2">
@@ -339,7 +339,7 @@ export default function Home() {
           {/* Left Side - Title and Description */}
           <div className="lg:w-1/3">
             <div className="sticky top-24">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 agbalumo-font">
                 <span className="gradient-mix">Best Selling Tour Packages</span>
               </h2>
               <p className="text-gray-600 mb-6">
@@ -463,7 +463,7 @@ export default function Home() {
       {/* Interactive Sri Lanka Map Section */}
       <div className="max-w-6xl mx-auto px-4 py-8 sm:py-12 lg:py-16">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold agbalumo-font">
             <span className="gradient-mix">Explore Sri Lanka</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2 mt-4">
@@ -478,7 +478,7 @@ export default function Home() {
       {/* Tour Packages & Top Places to Visit Section */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-16 mb-16 sm:mb-20 lg:mb-24">
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 agbalumo-font">
             <span className="gradient-mix">TOUR PACKAGES & TOP PLACES TO VISIT</span>
           </h2>
         </div>

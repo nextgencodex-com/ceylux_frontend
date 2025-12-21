@@ -112,6 +112,39 @@ export default function PlanningTripPage() {
         {`
           @import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
           .agbalumo-font { font-family: 'Agbalumo', sans-serif; }
+
+          /* Gradient Colors for AI Travel Assistant Title */
+          .gradient-blue {
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          .gradient-green {
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          .gradient-yellow {
+            background: linear-gradient(90deg, #eab308, #ca8a04);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          
+          /* Gradient mix for longer text */
+          .gradient-mix {
+            background: linear-gradient(90deg, 
+              #3b82f6 0%, 
+              #22c55e 50%, 
+              #eab308 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+
           .line-clamp-3 {
             display: -webkit-box;
             -webkit-line-clamp: 3;
@@ -128,20 +161,19 @@ export default function PlanningTripPage() {
       <div className="relative mt-4 sm:mt-6 lg:mt-8 mx-2 sm:mx-4 lg:mx-8">
         <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl sm:rounded-3xl overflow-hidden">
           <img 
-            src="/images/Planing.jpeg" 
+            src="/images/Planing-Travel 2.jpeg"
             alt="Planning trip" 
             className="w-full h-full object-cover" 
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-2 sm:px-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-2 sm:mb-4 drop-shadow-lg agbalumo-font">
-              Planning<br />
-              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl">A Trip</span>
+              Plan Your Dream Journey
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl mb-1 sm:mb-2 drop-shadow-md font-medium agbalumo-font">
-              Let AI Help You Plan
+              Let AI Guide You
             </p>
             <p className="text-base sm:text-lg md:text-xl mb-4 sm:mb-6 lg:mb-8 drop-shadow-md agbalumo-font">
-              Your Perfect Adventure
+              Every Steps of the Way
             </p>
             <button 
               className="bg-white/20 backdrop-blur-sm border-2 border-white text-white px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-white/30 transition-all duration-300 mb-4 sm:mb-6 lg:mb-8 text-sm sm:text-base"
@@ -163,9 +195,8 @@ export default function PlanningTripPage() {
         
         {/* Tour Package Categories Section */}
         <div className="mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12">
-            <span className="text-cyan-400">Tour Package</span>{" "}
-            <span className="text-gray-800">Categories</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 agbalumo-font">
+            <span className="gradient-mix">Tour Package Categories</span>
           </h2>
           
           {/* Category Navigation Cards */}
@@ -196,13 +227,13 @@ export default function PlanningTripPage() {
                       />
                     </div>
                     <div className="p-6 flex flex-col flex-grow">
-                      <h3 className={`text-xl font-bold mb-2 ${category.color || 'text-cyan-400'}`}>
+                      <h3 className={`text-xl font-bold mb-2 agbalumo-font ${category.color || 'gradient-mix'}`}>
                         {category.title}
                       </h3>
                       <p className="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">
                         {category.description}
                       </p>
-                      <div className={`flex items-center font-medium text-sm group-hover:underline ${category.color || 'text-cyan-400'} mt-auto`}>
+                      <div className={`flex items-center font-medium text-sm group-hover:underline ${category.color || 'gradient-mix'} mt-auto`}>
                         Explore Packages →
                       </div>
                     </div>
@@ -215,9 +246,8 @@ export default function PlanningTripPage() {
 
         {/* Best Selling Tour Packages Section */}
         <div className="mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12">
-            <span className="text-cyan-400">Best Selling</span>{" "}
-            <span className="text-gray-800">Tour Packages</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 agbalumo-font">
+            <span className="gradient-mix">Best Selling Tour Packages</span>
           </h2>
           
           {bestSellingPackages.length > 0 ? (
@@ -241,18 +271,18 @@ export default function PlanningTripPage() {
                       )}
                     </div>
                     <div className="p-6">
-                      <h3 className="text-xl font-bold mb-2 text-gray-900">{pkg.title}</h3>
+                      <h3 className="text-xl font-bold mb-2 gradient-mix agbalumo-font">{pkg.title}</h3>
                       <p className="text-gray-600 mb-2">{pkg.duration || '5 Days / 4 Nights'}</p>
                       <p className="text-gray-700 text-sm mb-4 line-clamp-3">
                         {pkg.description || 'Experience the best of Sri Lanka with our carefully curated packages designed for unforgettable memories.'}
                       </p>
 
                       <div className="mb-4">
-                        <h4 className="font-semibold mb-2 text-gray-900">Highlights:</h4>
+                        <h4 className="font-semibold mb-2 gradient-mix">Highlights:</h4>
                         <ul className="text-sm text-gray-700 space-y-1">
                           {(pkg.highlights || []).slice(0, 4).map((highlight, index) => (
                             <li key={index} className="flex items-center">
-                              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                              <span className="w-2 h-2 bg-gradient-to-r from-[#3b82f6] via-[#22c55e] to-[#eab308] rounded-full mr-2"></span>
                               {highlight}
                             </li>
                           ))}
@@ -265,7 +295,7 @@ export default function PlanningTripPage() {
                         </p>
                         <button 
                           onClick={() => handleCustomize(pkg)}
-                          className="w-full bg-cyan-400 text-white py-3 px-6 rounded-md font-semibold hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
+                          className="w-full bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 text-black py-3 px-6 rounded-md font-semibold hover:from-[#3b82f6]/30 hover:via-[#22c55e]/30 hover:to-[#eab308]/30 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 transition"
                         >
                           Customize your package
                         </button>
@@ -300,7 +330,7 @@ export default function PlanningTripPage() {
         </div>
 
         {/* Call to Action Section */}
-        <div className="text-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+        <div className="text-center bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 rounded-2xl p-8 text-black">
           <h3 className="text-2xl md:text-3xl font-bold mb-4">
             Ready to Start Your Adventure?
           </h3>
@@ -308,10 +338,10 @@ export default function PlanningTripPage() {
             Let our travel experts help you create the perfect itinerary for your dream vacation in Sri Lanka.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-cyan-400 text-white px-8 py-3 rounded-full font-semibold hover:bg-cyan-500 transition-colors">
+            <button className="bg-cyan-400 text-black px-8 py-3 rounded-full font-semibold hover:bg-cyan-500 transition-colors">
               Get Free Consultation
             </button>
-            <button className="border-2 border-cyan-400 text-white px-8 py-3 rounded-full font-semibold hover:bg-cyan-400 hover:text-white transition-colors">
+            <button className="border-2 border-cyan-400 text-black px-8 py-3 rounded-full font-semibold hover:bg-cyan-400 hover:text-black transition-colors">
               View All Packages
             </button>
           </div>

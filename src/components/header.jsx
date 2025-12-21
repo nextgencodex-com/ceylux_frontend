@@ -37,7 +37,7 @@ export default function Header() {
 
           {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex justify-center w-full">
-            <nav className="bg-white backdrop-blur-sm rounded-full p-1.5 shadow-lg border border-cyan-400">
+            <nav className="bg-white backdrop-blur-sm rounded-full p-1.5 shadow-lg border border-cyan-400 agbalumo-font">
               {navItems.map((item) => (
                 <button
                   key={item.name}
