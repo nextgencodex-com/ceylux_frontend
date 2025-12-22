@@ -117,6 +117,48 @@ export default function PopularDestinations() {
           .agbalumo-font {
             font-family: 'Agbalumo', sans-serif;
           }
+
+          /* Gradient Colors for AI Travel Assistant Title */
+          .gradient-blue {
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          .gradient-green {
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          .gradient-yellow {
+            background: linear-gradient(90deg, #eab308, #ca8a04);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          
+          /* Gradient mix for longer text */
+          .gradient-mix {
+            background: linear-gradient(90deg, 
+              #3b82f6 0%, 
+              #22c55e 50%, 
+              #eab308 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+
+          .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.4;
+            max-height: calc(1.4em * 3);
+          }
         `}
       </style>
 
@@ -124,7 +166,7 @@ export default function PopularDestinations() {
       <div className="relative mt-4 sm:mt-6 lg:mt-8 mx-2 sm:mx-4 lg:mx-8">
         <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl sm:rounded-3xl overflow-hidden">
           <img
-            src="/images/Destination.jpeg"
+            src="/images/Destination 1.jpg"
             alt="Beautiful Sri Lanka destinations and landscapes"
             className="w-full h-full object-cover"
           />
@@ -132,15 +174,13 @@ export default function PopularDestinations() {
           {/* Hero Content Overlay with font changes */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-2 sm:px-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-2 sm:mb-4 drop-shadow-lg agbalumo-font">
-              Discover
-              <br />
-              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl">Destinations</span>
+              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl">Signature Destinations</span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl mb-1 sm:mb-2 drop-shadow-md font-medium agbalumo-font">
-              Explore Sri Lanka's Hidden Gems
+              Experience Sri Lanka’s Timeless Treasures
             </p>
             <p className="text-base sm:text-lg md:text-xl mb-4 sm:mb-6 lg:mb-8 drop-shadow-md agbalumo-font">
-              From Ancient Fortresses to Pristine Beaches
+              History. Nature. Beaches.
             </p>
             <button 
               className="bg-white/20 backdrop-blur-sm border-2 border-white text-white px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-white/30 transition-all duration-300 mb-4 sm:mb-6 lg:mb-8 text-sm sm:text-base"
@@ -160,9 +200,8 @@ export default function PopularDestinations() {
       {/* Destinations Content Section */}
       <div className="py-12 px-4 sm:px-4 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12">
-          <span className="text-cyan-400">Most</span> <span className="text-gray-800">Popular</span>{" "}
-          <span className="text-cyan-400">Destinations</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12 agbalumo-font">
+          <span className="gradient-mix">Most Popular Destinations</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -180,7 +219,7 @@ export default function PopularDestinations() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3 gradient-mix agbalumo-font">
                     {destination.title}
                   </h3>
 
@@ -189,7 +228,7 @@ export default function PopularDestinations() {
                   </p>
 
                   <Link to={`/destinations/${destination.id}`}>
-                    <button className="w-full bg-cyan-400 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200">
+                    <button className="w-full bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 text-black font-medium py-2 px-4 rounded-md hover:from-[#3b82f6]/30 hover:via-[#22c55e]/30 hover:to-[#eab308]/30 transition-colors duration-200">
                       Read More
                     </button>
                   </Link>

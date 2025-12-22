@@ -60,14 +60,56 @@ export default function ContactUsPage() {
             .agbalumo-font {
               font-family: 'Agbalumo', sans-serif;
             }
-          `}
+
+            /* Gradient Colors for AI Travel Assistant Title */
+          .gradient-blue {
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          .gradient-green {
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          .gradient-yellow {
+            background: linear-gradient(90deg, #eab308, #ca8a04);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          
+          /* Gradient mix for longer text */
+          .gradient-mix {
+            background: linear-gradient(90deg, 
+              #3b82f6 0%, 
+              #22c55e 50%, 
+              #eab308 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+
+          .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.4;
+            max-height: calc(1.4em * 3);
+          }
+        `}
         </style>
 
         {/* Hero Section with Agbalumo font */}
         <div className="relative mt-4 sm:mt-6 lg:mt-8 mx-2 sm:mx-4 lg:mx-8">
           <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl sm:rounded-3xl overflow-hidden">
             <img
-              src="/images/Contact.jpeg"
+              src="/images/Contact 2.jpg"
               alt="Beautiful Sri Lanka landscape"
               className="w-full h-full object-cover"
             />
@@ -75,15 +117,13 @@ export default function ContactUsPage() {
             {/* Hero Content Overlay with font changes */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-2 sm:px-4">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-2 sm:mb-4 drop-shadow-lg agbalumo-font">
-                Get In
-                <br />
-                <span className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl">Touch</span>
+                <span className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl">Start the Conversation</span>
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl mb-1 sm:mb-2 drop-shadow-md font-medium agbalumo-font">
-                We'd Love To Hear From You
+                Personalized Support for Your Travel Needs
               </p>
               <p className="text-base sm:text-lg md:text-xl mb-4 sm:mb-6 lg:mb-8 drop-shadow-md agbalumo-font">
-                Contact Us Today
+                Get in Touch Today
               </p>
               <button 
                 className="bg-white/20 backdrop-blur-sm border-2 border-white text-white px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-white/30 transition-all duration-300 mb-4 sm:mb-6 lg:mb-8 text-sm sm:text-base"
@@ -103,8 +143,8 @@ export default function ContactUsPage() {
         {/* Contact Form Section */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
           <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4">
-              <span className="text-cyan-400">Contact</span> <span className="text-gray-800">Us</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 agbalumo-font">
+              <span className="gradient-mix">Contact Us</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2">
               The Sri Lanka tourism alliance welcome individuals or organisations based in Sri Lanka or overseas
@@ -121,7 +161,7 @@ export default function ContactUsPage() {
           </div>
 
           {/* Contact Form Card */}
-          <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 w-full max-w-2xl mx-auto">
+          <div className="bg-gradient-to-r from-[#3b82f6]/15 via-[#22c55e]/15 to-[#eab308]/15 rounded-xl sm:rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 w-full max-w-2xl mx-auto">
             {/* Success/Error Message */}
             {message.text && (
               <div className={`mb-6 p-4 rounded-lg ${

@@ -62,12 +62,12 @@ export default function Footer() {
 
               {/* CENTER TEXT */}
               <div className="flex-1 flex flex-col items-center justify-center text-center px-4">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8 leading-tight drop-shadow-lg">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8 leading-tight drop-shadow-lg agbalumo-font">
                   Begin your journey
                   <br />
                   your best trip starts here.
                 </h2>
-                <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-white drop-shadow-md tracking-wider">
+                <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-white drop-shadow-md tracking-wider agbalumo-font">
                   SRI LANKA
                 </p>
               </div>
