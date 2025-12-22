@@ -204,7 +204,7 @@ export default function DestinationDetails() {
       {/* Main Content Section */}
       <div className="max-w-6xl mx-auto p-6">
         {/* Header */}
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 text-gray-900">{destination.title}</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-10 gradient-mix agbalumo-font leading-[1.25] py-2 overflow-visible">{destination.title}</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* Description */}
@@ -245,7 +245,7 @@ export default function DestinationDetails() {
 
         {/* Recommended Packages */}
         <div>
-          <h2 className="text-2xl font-bold mb-8 text-cyan-400">Recommend packages</h2>
+          <h2 className="text-2xl font-bold mb-8 gradient-mix agbalumo-font">Recommend packages</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Package 1 */}
@@ -261,7 +261,7 @@ export default function DestinationDetails() {
                 </span>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-900">Cultural Triangle Discovery</h3>
+                <h3 className="text-xl font-bold mb-2 gradient-mix agbalumo-font">Cultural Triangle Discovery</h3>
                 <p className="text-gray-600 mb-2">7 Days / 6 Night</p>
                 <p className="text-gray-700 text-sm mb-4">
                   Explore the ancient heritage of Sri Lanka with visits to Sigiriya Rock Fortress, Dambulla Cave Temple,
@@ -269,22 +269,22 @@ export default function DestinationDetails() {
                 </p>
 
                 <div className="mb-4">
-                  <h4 className="font-semibold mb-2 text-gray-900">Highlight:</h4>
+                  <h4 className="font-semibold mb-2 gradient-mix">Highlight:</h4>
                   <ul className="text-sm text-gray-700 space-y-1">
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-[#3b82f6] via-[#22c55e] to-[#eab308] rounded-full mr-2"></span>
                       Sigiriya Rock Fortress
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-[#3b82f6] via-[#22c55e] to-[#eab308] rounded-full mr-2"></span>
                       Dambulla Cave Temple
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-[#3b82f6] via-[#22c55e] to-[#eab308] rounded-full mr-2"></span>
                       Temple of the Tooth (Kandy)
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-[#3b82f6] via-[#22c55e] to-[#eab308] rounded-full mr-2"></span>
                       Cultural Dance Show
                     </li>
                   </ul>
@@ -300,7 +300,7 @@ export default function DestinationDetails() {
                       duration: "7 Days / 6 Nights",
                       highlights: ["Sigiriya Rock Fortress", "Dambulla Cave Temple", "Temple of the Tooth", "Cultural Dance Show"]
                     })}
-                    className="w-full bg-cyan-400 text-white py-3 px-6 rounded-md font-semibold hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
+                    className="w-full bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 text-black py-3 px-6 rounded-md font-semibold hover:from-[#3b82f6]/30 hover:via-[#22c55e]/30 hover:to-[#eab308]/30 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 transition"
                   >
                     Customize your package
                   </button>
@@ -327,29 +327,29 @@ export default function DestinationDetails() {
                 </span>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-900">Wildlife Adventure</h3>
+                <h3 className="text-xl font-bold mb-2 gradient-mix agbalumo-font">Wildlife Adventure</h3>
                 <p className="text-gray-600 mb-2">5 Days / 4 Night</p>
                 <p className="text-gray-700 text-sm mb-4">
                   Experience Sri Lanka's incredible wildlife with safaris in Yala National Park and visits to elephant sanctuaries.
                 </p>
 
                 <div className="mb-4">
-                  <h4 className="font-semibold mb-2 text-gray-900">Highlight:</h4>
+                  <h4 className="font-semibold mb-2 gradient-mix">Highlight:</h4>
                   <ul className="text-sm text-gray-700 space-y-1">
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-[#3b82f6] via-[#22c55e] to-[#eab308] rounded-full mr-2"></span>
                       Yala National Park Safari
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-[#3b82f6] via-[#22c55e] to-[#eab308] rounded-full mr-2"></span>
                       Udawalawe Elephant Transit Home
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-[#3b82f6] via-[#22c55e] to-[#eab308] rounded-full mr-2"></span>
                       Sinharaja Rain Forest
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-[#3b82f6] via-[#22c55e] to-[#eab308] rounded-full mr-2"></span>
                       Bird Watching Tour
                     </li>
                   </ul>
@@ -365,7 +365,7 @@ export default function DestinationDetails() {
                       duration: "5 Days / 4 Nights",
                       highlights: ["Yala National Park Safari", "Udawalawe Elephant Transit Home", "Sinharaja Rain Forest", "Bird Watching Tour"]
                     })}
-                    className="w-full bg-cyan-400 text-white py-3 px-6 rounded-md font-semibold hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
+                    className="w-full bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 text-black py-3 px-6 rounded-md font-semibold hover:from-[#3b82f6]/30 hover:via-[#22c55e]/30 hover:to-[#eab308]/30 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 transition"
                   >
                     Customize your package
                   </button>
@@ -392,29 +392,29 @@ export default function DestinationDetails() {
                 </span>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-900">Beach Paradise</h3>
+                <h3 className="text-xl font-bold mb-2 gradient-mix agbalumo-font">Beach Paradise</h3>
                 <p className="text-gray-600 mb-2">6 Days / 5 Night</p>
                 <p className="text-gray-700 text-sm mb-4">
                   Relax on Sri Lanka's stunning beaches with visits to Mirissa, Bentota, and Unawatuna.
                 </p>
 
                 <div className="mb-4">
-                  <h4 className="font-semibold mb-2 text-gray-900">Highlight:</h4>
+                  <h4 className="font-semibold mb-2 gradient-mix">Highlight:</h4>
                   <ul className="text-sm text-gray-700 space-y-1">
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-[#3b82f6] via-[#22c55e] to-[#eab308] rounded-full mr-2"></span>
                       Mirissa Whale Watching
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-[#3b82f6] via-[#22c55e] to-[#eab308] rounded-full mr-2"></span>
                       Bentota Water Sports
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-[#3b82f6] via-[#22c55e] to-[#eab308] rounded-full mr-2"></span>
                       Unawatuna Beach Relaxation
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                      <span className="w-2 h-2 bg-gradient-to-r from-[#3b82f6] via-[#22c55e] to-[#eab308] rounded-full mr-2"></span>
                       Galle Fort Exploration
                     </li>
                   </ul>
@@ -430,7 +430,7 @@ export default function DestinationDetails() {
                       duration: "6 Days / 5 Nights",
                       highlights: ["Mirissa Whale Watching", "Bentota Water Sports", "Unawatuna Beach Relaxation", "Galle Fort Exploration"]
                     })}
-                    className="w-full bg-cyan-400 text-white py-3 px-6 rounded-md font-semibold hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
+                    className="w-full bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 text-black py-3 px-6 rounded-md font-semibold hover:from-[#3b82f6]/30 hover:via-[#22c55e]/30 hover:to-[#eab308]/30 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 transition"
                   >
                     Customize your package
                   </button>
