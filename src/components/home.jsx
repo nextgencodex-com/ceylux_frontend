@@ -1,47 +1,21 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Paperclip, Upload, Send, Mic, Facebook, MessageCircle, Music } from "lucide-react"
+import { Paperclip, Upload, Send, Mic, Facebook, MessageCircle, Music, Loader, AlertCircle } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import InteractiveSriLankaMap from "./map"
+import { useAI } from "../context/AIContext"
 
 export default function Home() {
   const navigate = useNavigate()
+  const { chat, loading, error: aiError } = useAI()
   const [selectedFile, setSelectedFile] = useState(null)
   const [dragActive, setDragActive] = useState(false)
   const [tripQuery, setTripQuery] = useState("")
   const [showUploadSection, setShowUploadSection] = useState(false)
+  const [aiResponse, setAiResponse] = useState(null)
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://cdn.botpress.cloud/webchat/v0/inject.js";
-    script.async = true;
-    script.onload = () => {
-      window.botpressWebChat.init({
-        botId: "978fea9e-4cc3-437a-b3f5-3eb8baba0022",
-        hostUrl: "https://cdn.botpress.cloud/webchat/v0",
-        messagingUrl: "https://messaging.botpress.cloud",
-        clientId: "978fea9e-4cc3-437a-b3f5-3eb8baba0022",
-        enableConversationDeletion: true,
-        showPoweredBy: false,
-        useSessionStorage: false,
-        botName: "Ceyluxe AI",
-        layoutWidth: "400px",
-        stylesheet: "https://cdn.botpress.cloud/webchat/v0/themes/default.css",
-        enableReset: true,
-        avatarUrl: "https://cdn-icons-png.flaticon.com/512/4712/4712109.png",
-      });
-
-      // Hide the widget initially
-      window.botpressWebChat.hide();
-    };
-    document.body.appendChild(script);
-
-    // Cleanup function to remove the script when component unmounts
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+  // Botpress chat removed - now using custom AI chat integration
 
   const handleFileSelect = (file) => {
     setSelectedFile(file)
@@ -73,15 +47,24 @@ export default function Home() {
     }
   }
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (tripQuery.trim()) {
       console.log("Sending query:", tripQuery)
-      if (selectedFile) {
-        console.log("With attached file:", selectedFile.name)
+      try {
+        const response = await chat(tripQuery)
+        setAiResponse(response)
+        setTripQuery("")
+        setSelectedFile(null)
+        setShowUploadSection(false)
+      } catch (err) {
+        console.error("Failed to get AI response:", err)
       }
-      setTripQuery("")
-      setSelectedFile(null)
-      setShowUploadSection(false)
+    }
+  }
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' && !loading) {
+      handleSendMessage()
     }
   }
 
@@ -187,8 +170,10 @@ export default function Home() {
                 type="text"
                 value={tripQuery}
                 onChange={(e) => setTripQuery(e.target.value)}
+                onKeyPress={handleKeyPress}
                 placeholder="Let AI Help Your Plan Perfect Getaway..."
                 className="w-full pl-14 pr-4 sm:pr-6 py-3 sm:py-4 text-base sm:text-lg border-0 focus:outline-none focus:ring-0 rounded-lg"
+                disabled={loading}
               />
             </div>
             {/* Swapped buttons: Send on left, Mic on right */}
@@ -197,13 +182,51 @@ export default function Home() {
                 <Mic className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
               <button 
-                className="bg-black text-white p-3 sm:p-4 rounded-full hover:bg-gray-800 transition-colors"
+                className="bg-black text-white p-3 sm:p-4 rounded-full hover:bg-gray-800 transition-colors disabled:bg-gray-400"
                 onClick={handleSendMessage}
+                disabled={loading || !tripQuery.trim()}
               >
-                <Send className="w-5 h-5 sm:w-6 sm:h-6" />
+                {loading ? (
+                  <Loader className="w-5 h-5 sm:w-6 sm:h-6 animate-spin" />
+                ) : (
+                  <Send className="w-5 h-5 sm:w-6 sm:h-6" />
+                )}
               </button>
             </div>
           </div>
+
+          {/* AI Response Display */}
+          {aiResponse && (
+            <div className="mt-6 p-4 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-lg border border-cyan-200">
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">AI</span>
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-semibold text-gray-800 mb-2">AI Travel Assistant</h4>
+                  <div className="prose prose-sm max-w-none text-gray-700 whitespace-pre-wrap">
+                    {aiResponse.response || aiResponse.message || JSON.stringify(aiResponse)}
+                  </div>
+                </div>
+                <button
+                  onClick={() => setAiResponse(null)}
+                  className="flex-shrink-0 text-gray-400 hover:text-gray-600"
+                >
+                  ×
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Error Display */}
+          {aiError && (
+            <div className="mt-4 p-4 bg-red-50 rounded-lg border border-red-200 flex items-start gap-3">
+              <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+              <div className="flex-1">
+                <p className="text-red-800 text-sm">{aiError}</p>
+              </div>
+            </div>
+          )}
 
           {/* Image Upload Section - Now conditionally rendered */}
           {showUploadSection && (

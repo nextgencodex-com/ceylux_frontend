@@ -16,6 +16,7 @@ import CustomizePackages from './components/customize-packages';
 // Context imports
 import { PublicPackagesProvider } from './context/PublicPackagesContext';
 import { CategoryProvider } from './context/CategoryContext';
+import { AIProvider } from './context/AIContext';
 
 // Admin imports
 import { AuthProvider } from './admin/context/AuthContext';
@@ -36,14 +37,18 @@ import ImageStorageTest from './admin/pages/ImageStorageTest';
 import "leaflet/dist/leaflet.css";
 import './admin/styles/premium.css';
 
+// AI Components
+import AIChatBox from './components/AIChatBox';
+
 function App() {
   return (
-    <AuthProvider>
-      <PackageProvider>
-        <CategoryProvider>
-          <PublicPackagesProvider>
-            <Router>
-            <div className="App">
+    <AIProvider>
+      <AuthProvider>
+        <PackageProvider>
+          <CategoryProvider>
+            <PublicPackagesProvider>
+              <Router>
+              <div className="App">
               <Routes>
                 {/* Public Routes */}
                 <Route path="/" element={
@@ -133,10 +138,12 @@ function App() {
             </Routes>
           </div>
         </Router>
+        <AIChatBox />
         </PublicPackagesProvider>
         </CategoryProvider>
       </PackageProvider>
     </AuthProvider>
+    </AIProvider>
   );
 }
 
