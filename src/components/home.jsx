@@ -345,7 +345,9 @@ export default function Home() {
               <p className="text-gray-600 mb-6">
                 Discover our most popular tour packages curated by thousands of happy travelers
               </p>
-              <button className="bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 text-gray-800 font-semibold px-6 py-3 rounded-lg shadow-lg hover:from-[#3b82f6]/30 hover:via-[#22c55e]/30 hover:to-[#eab308]/30 transition-colors duration-300">
+              <button
+              onClick={() => navigate('/planning')}
+              className="bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 text-gray-800 font-semibold px-6 py-3 rounded-lg shadow-lg hover:from-[#3b82f6]/30 hover:via-[#22c55e]/30 hover:to-[#eab308]/30 transition-colors duration-300">
                 View All Packages
               </button>
               <div className="mt-8 hidden lg:block">

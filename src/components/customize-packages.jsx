@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Calendar, Minus, Plus, User, Mail, Phone } from "lucide-react"
-import { useLocation } from "react-router-dom"
+import { Calendar, Minus, Plus, User, Mail, Phone, ArrowLeft } from "lucide-react"
+import { useLocation, useNavigate } from "react-router-dom"
 import { databaseService } from "../services/databaseService"
 import { categoryActivities, categoryPackageInfo } from "../data/categoryActivities"
 
 export default function Component() {
   const location = useLocation();
+  const navigate = useNavigate();
   const packageData = location.state?.packageData;
   const selectedCategory = packageData?.category || 'beach-holidays';
   
@@ -249,7 +250,7 @@ Thank you for choosing Ceyluxe Tourism! We have received your customization requ
 📋 *${packageData.packageTitle}*
 • Travel Dates: ${packageData.travelDates.from} to ${packageData.travelDates.to}
 • Duration: ${packageData.duration.days} Days / ${packageData.duration.nights} Nights
-• Total Price: $${packageData.totalPrice} ${packageData.currency}
+•  Total Price: ${packageData.totalPrice} ${packageData.currency}
 
 Our travel experts will review your requirements and get back to you within 2 hours with:
 ✅ Detailed itinerary
@@ -301,7 +302,7 @@ ${packageData.customerInfo.specialRequests ? `• Special Requests: ${packageDat
 • Hotel: ${packageData.dayDetails[1].hotel.name} (${packageData.dayDetails[1].hotel.roomType}, ${packageData.dayDetails[1].hotel.mealPlan})
 • Activities: ${packageData.dayDetails[1].activities.map(activity => activity.name).join(', ')}
 
-💰 *Total Package Price: $${packageData.totalPrice} ${packageData.currency}*
+💰  *Total Package Price: ${packageData.totalPrice} ${packageData.currency}*
 
 Please confirm availability and provide detailed itinerary for this customized package.
 
@@ -577,7 +578,17 @@ Thank you! 🙏
     <div className="min-h-screen bg-gray-50 py-8 px-4">
       <div className="max-w-6xl mx-auto space-y-6">
         {/* Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 relative">
+          {/* Back Button */}
+          <button
+            onClick={() => navigate(-1)}
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors py-2 px-3 rounded-lg hover:bg-gray-100"
+            aria-label="Go back"
+          >
+             <ArrowLeft className="h-5 w-5" />
+             <span className="hidden sm:inline text-sm font-medium">Back</span>
+          </button>
+          
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">{packageInfo.title}</h1>
           <p className="text-lg text-gray-600">{packageInfo.description}</p>
         </div>
@@ -719,9 +730,9 @@ Thank you! 🙏
                         {activity.name}
                       </label>
                     </div>
-                    <span className="text-sm font-medium text-green-600 bg-green-100 px-2 py-1 rounded">
+                    {/* <span className="text-sm font-medium text-green-600 bg-green-100 px-2 py-1 rounded">
                       {activity.price}
-                    </span>
+                    </span> */}
                   </div>
                 ))}
               </div>
@@ -785,9 +796,9 @@ Thank you! 🙏
                         {activity.name}
                       </label>
                     </div>
-                    <span className="text-sm font-medium text-green-600 bg-green-100 px-2 py-1 rounded">
+                    {/* <span className="text-sm font-medium text-green-600 bg-green-100 px-2 py-1 rounded">
                       {activity.price}
-                    </span>
+                    </span> */}
                   </div>
                 ))}
               </div>
@@ -855,9 +866,9 @@ Thank you! 🙏
                     <option value="suite">Suite</option>
                   </select>
                 </div>
-                <button className="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors">
+                {/* <button className="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors">
                   Price 200 $
-                </button>
+                </button> */}
               </div>
               
               {/* Custom Hotel Input for Day 1 */}
@@ -937,9 +948,9 @@ Thank you! 🙏
                     <option value="suite">Suite</option>
                   </select>
                 </div>
-                <button className="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors">
+                {/* <button className="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors">
                   Price 250 $
-                </button>
+                </button> */}
               </div>
               
               {/* Custom Hotel Input for Day 2 */}
@@ -1068,7 +1079,7 @@ Thank you! 🙏
         )}
 
         {/* Hotel Suggestions */}
-        <div className="bg-white rounded-lg shadow-lg">
+        {/* <div className="bg-white rounded-lg shadow-lg">
           <div className="p-6 border-b">
             <h2 className="text-xl font-semibold">Hotel Suggestions</h2>
           </div>
@@ -1097,7 +1108,7 @@ Thank you! 🙏
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Book Button */}
         <div className="flex justify-center">
