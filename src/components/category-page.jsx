@@ -348,6 +348,48 @@ export default function CategoryPage() {
         {`
           @import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
           .agbalumo-font { font-family: 'Agbalumo', sans-serif; }
+
+          /* Gradient Colors for AI Travel Assistant Title */
+          .gradient-blue {
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          .gradient-green {
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          .gradient-yellow {
+            background: linear-gradient(90deg, #eab308, #ca8a04);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          
+          /* Gradient mix for longer text */
+          .gradient-mix {
+            background: linear-gradient(90deg, 
+              #3b82f6 0%, 
+              #22c55e 50%, 
+              #eab308 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+
+          .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.4;
+            max-height: calc(1.4em * 3);
+          }
         `}
       </style>
 
@@ -383,8 +425,8 @@ export default function CategoryPage() {
         {/* Category Description */}
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            <span className="text-cyan-400">{categoryInfo.title}</span>{" "}
-            <span className="text-gray-800">Packages</span>
+            <span className="gradient-mix agbalumo-font">{categoryInfo.title}</span>{" "}
+            <span className="gradient-mix agbalumo-font">Packages</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Discover our carefully curated {categoryInfo.title.toLowerCase()} packages designed to provide you with the best experiences and memories in Sri Lanka.
@@ -457,18 +499,18 @@ export default function CategoryPage() {
                   )}
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">{pkg.title}</h3>
+                  <h3 className="text-xl font-bold mb-2 gradient-mix agbalumo-font">{pkg.title}</h3>
                   <p className="text-gray-600 mb-2">{pkg.duration}</p>
                   <p className="text-gray-700 text-sm mb-4 line-clamp-3">
                     {pkg.description || 'Experience the best of Sri Lanka with our carefully curated packages.'}
                   </p>
 
                   <div className="mb-4">
-                    <h4 className="font-semibold mb-2 text-gray-900">Highlights:</h4>
+                    <h4 className="font-semibold mb-2 gradient-mix">Highlights:</h4>
                     <ul className="text-sm text-gray-700 space-y-1">
                       {(pkg.highlights || []).slice(0, 4).map((highlight, index) => (
                         <li key={index} className="flex items-center">
-                          <span className={`w-2 h-2 rounded-full mr-2 ${categoryStyle.color.replace('text-', 'bg-')}`}></span>
+                          <span className="w-2 h-2 bg-gradient-to-r from-[#3b82f6] via-[#22c55e] to-[#eab308] rounded-full mr-2"></span>
                           {highlight}
                         </li>
                       ))}
@@ -481,7 +523,7 @@ export default function CategoryPage() {
                     </p>
                     <button 
                       onClick={() => handleCustomize(pkg)}
-                      className="w-full bg-cyan-400 text-white py-3 px-6 rounded-md font-semibold hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
+                      className="w-full bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 text-black py-3 px-6 rounded-md font-semibold hover:from-[#3b82f6]/30 hover:via-[#22c55e]/30 hover:to-[#eab308]/30 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 transition"
                     >
                       Customize your package
                     </button>
@@ -499,7 +541,7 @@ export default function CategoryPage() {
         )}
 
         {/* Call to Action */}
-        <div className={`text-center ${categoryStyle.bgColor} rounded-2xl p-8`}>
+        <div className="text-center bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 rounded-2xl p-8 text-black">
           <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
             Ready to Book Your {categoryInfo.title} Package?
           </h3>
@@ -509,13 +551,13 @@ export default function CategoryPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="/contactus"
-              className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors"
+              className="bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 text-gray-800 px-8 py-3 rounded-full font-semibold hover:from-[#3b82f6]/30 hover:via-[#22c55e]/30 hover:to-[#eab308]/30 transition-colors"
             >
               Get Free Consultation
             </Link>
             <Link 
               to="/planning"
-              className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-colors"
+              className="bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 text-gray-800 px-8 py-3 rounded-full font-semibold hover:from-[#3b82f6]/30 hover:via-[#22c55e]/30 hover:to-[#eab308]/30 transition-colors"
             >
               View All Categories
             </Link>

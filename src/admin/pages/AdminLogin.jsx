@@ -40,6 +40,38 @@ const AdminLogin = () => {
           @import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
           .agbalumo-font {
             font-family: 'Agbalumo', sans-serif;
+
+          }
+            /* Gradient Colors for AI Travel Assistant Title */
+          .gradient-blue {
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          .gradient-green {
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          .gradient-yellow {
+            background: linear-gradient(90deg, #eab308, #ca8a04);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          
+          /* Gradient mix for longer text */
+          .gradient-mix {
+            background: linear-gradient(90deg, 
+              #3b82f6 0%, 
+              #22c55e 50%, 
+              #eab308 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
           }
         `}
       </style>
@@ -48,7 +80,7 @@ const AdminLogin = () => {
       <div className="pt-4 sm:pt-6 px-4 sm:px-8">
         <div className="flex justify-center">
           <img 
-            src="/images/logo1.png" 
+            src="/images/Tour-Concept.png" 
             alt="Ceyluxe Logo" 
             className="h-24 sm:h-32 w-auto object-contain"
           />
@@ -71,8 +103,7 @@ const AdminLogin = () => {
               transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
               className="text-3xl sm:text-4xl font-bold mb-4 agbalumo-font"
             >
-              <span className="text-cyan-400">Admin</span>{' '}
-              <span className="text-gray-800">Dashboard</span>
+              <span className="gradient-mix agbalumo-font">Admin Dashboard</span>
             </motion.h2>
             <p className="text-lg text-gray-600">
               Welcome back! Please sign in to manage your tours

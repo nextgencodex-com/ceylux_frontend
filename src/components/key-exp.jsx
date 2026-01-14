@@ -90,6 +90,48 @@ export default function KeyExperiencesPage() {
         {`
           @import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
           .agbalumo-font { font-family: 'Agbalumo', sans-serif; }
+
+          /* Gradient Colors for AI Travel Assistant Title */
+          .gradient-blue {
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          .gradient-green {
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          .gradient-yellow {
+            background: linear-gradient(90deg, #eab308, #ca8a04);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          
+          /* Gradient mix for longer text */
+          .gradient-mix {
+            background: linear-gradient(90deg, 
+              #3b82f6 0%, 
+              #22c55e 50%, 
+              #eab308 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+
+          .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.4;
+            max-height: calc(1.4em * 3);
+          }
         `}
       </style>
 
@@ -97,20 +139,20 @@ export default function KeyExperiencesPage() {
       <div className="relative mt-4 sm:mt-6 lg:mt-8 mx-2 sm:mx-4 lg:mx-8">
         <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl sm:rounded-3xl overflow-hidden">
           <img 
-            src="/images/Keyexp.jpeg" 
+            src="/images/Key 1.jpg" 
             alt="Key Experiences in Sri Lanka" 
             className="w-full h-full object-cover" 
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-2 sm:px-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-2 sm:mb-4 drop-shadow-lg agbalumo-font">
-              <span className="text-white">Key</span><br />
+              <span className="text-white">Signature</span><br />
               <span className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white">Experiences</span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl mb-1 sm:mb-2 drop-shadow-md font-medium agbalumo-font">
-              Authentic Sri Lanka
+              The Authentic Spirit of Sri Lanka
             </p>
             <p className="text-base sm:text-lg md:text-xl mb-4 sm:mb-6 lg:mb-8 drop-shadow-md agbalumo-font">
-              Unforgettable Memories
+              Unforgettable Mements
             </p>
             <button 
               className="bg-white/20 backdrop-blur-sm border-2 border-white text-white px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-white/30 transition-all duration-300 mb-4 sm:mb-6 lg:mb-8 text-sm sm:text-base"
@@ -132,9 +174,8 @@ export default function KeyExperiencesPage() {
         
         {/* Introduction Section */}
         <div className="text-center mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            <span className="text-cyan-400">Discover</span> <span className="text-gray-800">Authentic</span>{" "}
-            <span className="text-cyan-400">Experiences</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 agbalumo-font">
+            <span className="gradient-mix">Discover Authentic Experiences</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Sri Lanka offers a diverse range of experiences that go beyond typical tourism. 
@@ -166,7 +207,7 @@ export default function KeyExperiencesPage() {
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-xl font-bold mb-3 gradient-mix agbalumo-font">
                   {experience.title}
                 </h3>
                 <p className="text-gray-600 mb-4 leading-relaxed">
@@ -174,11 +215,11 @@ export default function KeyExperiencesPage() {
                 </p>
                 
                 <div className="mb-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Highlights:</h4>
+                  <h4 className="font-semibold gradient-mix mb-2">Highlights:</h4>
                   <ul className="text-sm text-gray-700 space-y-1">
                     {experience.highlights.map((highlight, index) => (
                       <li key={index} className="flex items-center">
-                        <span className="w-2 h-2 bg-cyan-400 rounded-full mr-2"></span>
+                        <span className="w-2 h-2 bg-gradient-to-r from-[#3b82f6] via-[#22c55e] to-[#eab308] rounded-full mr-2"></span>
                         {highlight}
                       </li>
                     ))}
@@ -186,7 +227,7 @@ export default function KeyExperiencesPage() {
                 </div>
                 
                 <div className="flex space-x-2">
-                  <button className="flex-1 bg-cyan-400 text-white py-2 px-4 rounded-lg font-semibold hover:bg-cyan-500 transition-colors">
+                  <button className="flex-1 bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 text-black py-2 px-4 rounded-lg font-semibold hover:from-[#3b82f6]/30 hover:via-[#22c55e]/30 hover:to-[#eab308]/30 transition-colors">
                     Learn More
                   </button>
                   <button 
@@ -204,8 +245,8 @@ export default function KeyExperiencesPage() {
         {/* Why Choose Our Experiences */}
         <div className="mb-16">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              <span className="text-cyan-400">Why Choose</span> <span className="text-gray-800">Our Experiences</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 agbalumo-font">
+              <span className="gradient-mix">Why Choose Our Experiences</span>
             </h2>
           </div>
           
@@ -217,7 +258,7 @@ export default function KeyExperiencesPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Local Expertise</h3>
+              <h3 className="text-lg font-bold gradient-mix mb-2">Local Expertise</h3>
               <p className="text-gray-600 text-sm">
                 Expert guides with deep knowledge of local culture and traditions
               </p>
@@ -229,7 +270,7 @@ export default function KeyExperiencesPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Flexible Timing</h3>
+              <h3 className="text-lg font-bold gradient-mix mb-2">Flexible Timing</h3>
               <p className="text-gray-600 text-sm">
                 Customizable schedules to fit your travel itinerary
               </p>
@@ -241,7 +282,7 @@ export default function KeyExperiencesPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Authentic Experiences</h3>
+              <h3 className="text-lg font-bold gradient-mix mb-2">Authentic Experiences</h3>
               <p className="text-gray-600 text-sm">
                 Genuine interactions with local communities and traditions
               </p>
@@ -253,7 +294,7 @@ export default function KeyExperiencesPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Quality Assured</h3>
+              <h3 className="text-lg font-bold gradient-mix mb-2">Quality Assured</h3>
               <p className="text-gray-600 text-sm">
                 Carefully curated experiences with safety and quality standards
               </p>
@@ -262,7 +303,7 @@ export default function KeyExperiencesPage() {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl p-8 text-white">
+        <div className="text-center bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 rounded-2xl p-8 text-black">
           <h3 className="text-2xl md:text-3xl font-bold mb-4">
             Ready to Create Unforgettable Memories?
           </h3>
@@ -271,12 +312,12 @@ export default function KeyExperiencesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
-              className="bg-white text-cyan-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+              className="bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 text-gray-800 px-8 py-3 rounded-full font-semibold hover:from-[#3b82f6]/30 hover:via-[#22c55e]/30 hover:to-[#eab308]/30 transition-colors"
               onClick={navigateToAI}
             >
               Plan Your Trip With AI
             </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-cyan-600 transition-colors">
+            <button className="bg-gradient-to-r from-[#3b82f6]/20 via-[#22c55e]/20 to-[#eab308]/20 text-gray-800 px-8 py-3 rounded-full font-semibold hover:from-[#3b82f6]/30 hover:via-[#22c55e]/30 hover:to-[#eab308]/30 transition-colors">
               Contact Our Experts
             </button>
           </div>
