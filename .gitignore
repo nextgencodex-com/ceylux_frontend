@@ -19,7 +19,6 @@ dist.zip
 *.tar.gz
 
 # Editor directories and files
-.vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
@@ -28,3 +27,4 @@ dist.zip
 *.njsproj
 *.sln
 *.sw?
+config.bat
